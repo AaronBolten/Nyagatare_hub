@@ -1,0 +1,15 @@
+{
+    "name": "allato-z/nyagatare_hub",
+    "description": "hub_homepage_design",
+    "autoload": {
+        "psr-4": {
+            "AllatoZ\\NyagatareHub\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yes"
+        }
+    ],
+    "require": {}
+}

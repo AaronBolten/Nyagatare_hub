@@ -1,0 +1,77 @@
+/* ========== Responsive Design for Smaller Screens ========== */
+
+/* Tablet View (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding: 10px 30px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .stats-container {
+        gap: 30px;
+    }
+}
+
+/* Mobile View (320px - 767px) */
+@media screen and (max-width: 767px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 350px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    /* Stats */
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
