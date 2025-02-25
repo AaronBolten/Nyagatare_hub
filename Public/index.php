@@ -81,8 +81,8 @@
     </div>
 </div>
 <!-- Explore Our Vibrant Ecosystem Section -->
-<section class="ecosystem-section">
-    <div class="container">
+<section class="ecosystem-section1">
+    
         <!-- Section Title -->
         <h2 class="section-title">Explore Our Vibrant Ecosystem</h2>
         <p class="section-subtitle">Discover the people and organizations driving innovation and growth in our community.</p>
@@ -97,33 +97,33 @@
         </div>
 
         <!-- Grid Display -->
-        <div class="cards-container">
+        <div class="cards_2-container">
             <!-- Dummy Data for Startups -->
-            <div class="card">
-                <img src="uploads/startup1.png" alt="HiQ Africa" class="card-logo">
-                <h3 class="card-title">HiQ Africa</h3>
-                <p class="card-subtitle">FinTech</p>
-                <p class="card-description">We are enabling FMCG merchants to access timely and affordable financing...</p>
-                <button class="card-button">Show More Results</button>
+            <div class="card_2">
+                <img src="uploads/startup1.png" alt="HiQ Africa" class="card_2-logo">
+                <h3 class="card-title1">HiQ Africa</h3>
+                <p class="card-subtitle1">FinTech</p>
+                <p class="card-description1">We are enabling FMCG merchants to access timely and affordable financing...</p>
+                <button class="card-button1">Show More Results</button>
             </div>
 
-            <div class="card">
-                <img src="uploads/startup2.png" alt="Hview Tech" class="card-logo">
-                <h3 class="card-title">Hview Tech</h3>
-                <p class="card-subtitle">Others</p>
-                <p class="card-description">Hview Tech Group is your reliable software development partner...</p>
-                <button class="card-button">Show More Results</button>
+            <div class="card_2">
+                <img src="uploads/startup2.png" alt="Hview Tech" class="card_2-logo">
+                <h3 class="card-title1">Hview Tech</h3>
+                <p class="card-subtitle1">Others</p>
+                <p class="card-description1">Hview Tech Group is your reliable software development partner...</p>
+                <button class="card-button1">Show More Results</button>
             </div>
 
-            <div class="card">
-                <img src="uploads/startup3.png" alt="Global Real Estate" class="card-logo">
-                <h3 class="card-title">Global Real Estate</h3>
-                <p class="card-subtitle">PropTech</p>
-                <p class="card-description">Global Real Estate is an innovative platform that...</p>
-                <button class="card-button">Show More Results</button>
+            <div class="card_2">
+                <img src="uploads/startup3.png" alt="Global Real Estate" class="card_2-logo">
+                <h3 class="card-title1">Global Real Estate</h3>
+                <p class="card-subtitle1">PropTech</p>
+                <p class="card-description1">Global Real Estate is an innovative platform that...</p>
+                <button class="card-button1">Show More Results</button>
             </div>
         </div>
-    </div>
+
 </section>
 
 
