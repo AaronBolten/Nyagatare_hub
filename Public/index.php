@@ -90,9 +90,12 @@
         <!-- Search Bar -->
         <div class="search-bar">
             <input type="text" placeholder="Search startups, mentors, investors...">
-            <button class="filter-button active">Startups</button>
-            <button class="filter-button">Investors</button>
-            <button class="filter-button">Mentors</button>
+            <div class="tabs">
+              <a href="" class="tab-link <?php if($activePage == 'startups') { echo 'active'; } ?>">Startups</a>
+              <a href="" class="tab-link <?php if($activePage == 'investors') { echo 'active'; } ?>">Investors</a>
+              <a href="" class="tab-link <?php if($activePage == 'mentors') { echo 'active'; } ?>">Mentors</a>
+            </div>
+
             <a href="#" class="view-all">View all</a>
         </div>
 
