@@ -6,7 +6,7 @@ include 'db.php';
 // PHPMailer for sending verification emails
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php'; // Install using: composer require phpmailer/phpmailer
+require 'vendor/composer/autoload.php'; // Install using: composer require phpmailer/phpmailer
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
