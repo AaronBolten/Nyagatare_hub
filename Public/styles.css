@@ -4,20 +4,181 @@ html{
 /* General Layout */
 
 /* Navbar Styles */
+
 .navbar {
     display: flex;
+    min-height: 70px;
     justify-content: space-between;
     align-items: center;
     background-color: white;
     padding: 15px 50px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+.subcontainer{
+    width:1600px;
+    margin:auto;
+}
+@media(max-width:1600px){
+    .subcontainer{
+        width:100%;
+    }
+}
+.hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 10005;
+    position: fixed;
+    top: 20px;
+    right: 10px;  /* Moves away from scrollbar */
+}
 
+
+.bar{
+    display: block;
+    width:25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: #555;
+}
 /* Left Section (Logo) */
 .nav-left .logo {
     height: 68px;
 }
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+@media(max-width:1024px){
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
 
+    /* Logo and hamburger aligned */
+    .nav-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .hamburger{
+        display: block;
+        z-index: 10001;
+        position: relative;
+    }
+      /* Style the active hamburger menu */
+      .hamburger.active {
+        transform: rotate(90deg);
+    }
+    /* Hide nav links initially */
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease-in-out;
+        z-index: 10006;/* Ensure it appears above hero */
+        display: none;/* Hide initially */
+    }
+    .navbar{
+        z-index: 10003;/* Keep navbar above other elements */
+    }
+      /* When active, slide menu in */
+      .nav-links.active {
+        display: flex;
+        left: 0;
+        z-index: 10007; /* Ensure the menu appears above other content */
+        background: white;
+        position: fixed;
+        width: 100%;
+    }
+    .nav-right {
+        display: none; /* Hidden by default */
+    }
+    
+    .nav-right.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+       
+     /* Ensure proper order of navigation items */
+     .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .nav-right {
+        display: none;  /* Hide by default */
+    }
+    
+    .nav-right.active {
+        display: flex;  /* Show only when hamburger is active */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    
+    /* Ensure menu is visible when active */
+    .nav-links.active {
+        display: flex;
+        
+    }
+     /* Keep hero section visible */
+     .hero {
+        position: relative;
+        z-index: 2; /* Ensure it does not cover the menu */
+    }
+    /* Style Sign In and Sign Up buttons */
+    .nav-right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+        /* Ensure index.php remains scrollable */
+        body.menu-open {
+            overflow: auto; /* Allow scrolling */
+        }
+    
+    .signin-button, .signup-button {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+        font-size: 16px;
+    }
+}
 /* Center Section (Navigation Links) */
 .nav-links {
     list-style: none;
@@ -60,7 +221,7 @@ html{
     background: none;
     color: #555;
     padding: 10px 15px;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 500px;
@@ -99,7 +260,6 @@ body.signin-selected .signup-button {
     background: none;
     color: #555;
 }
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -111,6 +271,7 @@ body.signin-selected .signup-button {
     justify-content: center;
     text-align: center;
     color: white;
+    z-index: 1;
 }
 
 /* Dark Overlay */

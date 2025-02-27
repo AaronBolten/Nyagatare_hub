@@ -13,6 +13,26 @@
     </div>
 </div>
 
+<?php
+    // $data = json_decode(file_get_contents('https://testing.hangacentral.rw/api/investors/419pVj9SfP/nyagatare'), true);
+
+//     require('../vendor/autoload.php');
+//     $client =   new \GuzzleHttp\Client();
+
+//     try {
+//         $response   =   $client->request(
+//             'POST',
+//             'https://testing.hangacentral.org/api/investors/419pVj9SfP/nyagatare',
+//         );
+//         $response   =   json_decode($response->getBody());
+
+//         print($response);
+
+//     } catch (\Throwable $th) {
+//         die($th);
+//     }
+    
+// ?>
 <!-- Ecosystem Section -->
 <div class="ecosystem-section">
     <div class="logos">
@@ -173,6 +193,7 @@
 </div>
 
 <script src="script.js"></script>
+<script scr="script1.js"></script>
 
 
 <?php include 'footer.php'; ?>
