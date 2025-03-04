@@ -13,6 +13,9 @@ html{
     background-color: white;
     padding: 15px 50px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1400px; /* Ensures content is within a reasonable width */
+    margin: auto; /* Centers the navbar */
 }
 .subcontainer{
     width:1600px;
@@ -22,15 +25,20 @@ html{
     .subcontainer{
         width:100%;
     }
-}
-.hamburger {
+ }
+ /* .hamburger {
     display: block;
     cursor: pointer;
     z-index: 10005;
     position: fixed;
     top: 20px;
-    right: 10px;  /* Moves away from scrollbar */
-}
+    right: 20px;  /* Moves away from scrollbar */
+    @media (min-width: 1025px) {
+        .hamburger {
+            display: none !important; /* Hides the hamburger on large screens */
+        }
+    }
+    
 
 
 .bar{
@@ -55,6 +63,9 @@ html{
     transform: translateY(-8px) rotate(-45deg);
 }
 @media(max-width:1024px){
+    .hamburger {
+        display: none !important; /* Hide hamburger menu on larger screens */
+    }
     .navbar {
         position: fixed;
         top: 0;
@@ -184,6 +195,8 @@ html{
     list-style: none;
     display: flex;
     gap: 30px;
+    align-items: center; /* Align vertically */
+    justify-content: center; /* Center the navigation */
 }
 
 .nav-links li {
@@ -213,6 +226,8 @@ html{
 .nav-right {
     display: flex;
     gap: 15px;
+    align-items: center; /* Ensures they align properly */
+    margin-left: auto; /* Pushes them to the right */
 }
 
 /* Sign In Button */
