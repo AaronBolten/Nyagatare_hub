@@ -1,5 +1,8 @@
 <?php
-session_start(); // Start session for login/logout tracking
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+ // Start session for login/logout tracking
 ?>
 
 <!DOCTYPE html>

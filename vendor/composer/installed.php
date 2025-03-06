@@ -3,7 +3,7 @@
         'name' => 'allato-z/nyagatare_hub',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e31e948b4ee19b5ef841a6e06e497b57d543a955',
+        'reference' => '5d5ed5e9185dd504a035fc172d2c402656bee394',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'allato-z/nyagatare_hub' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e31e948b4ee19b5ef841a6e06e497b57d543a955',
+            'reference' => '5d5ed5e9185dd504a035fc172d2c402656bee394',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
