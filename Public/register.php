@@ -64,6 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="password">Enter Your Password</label>
             <input type="password" id="password" name="password" required>
 
+            <label for="confirm_password">Confirm Password:</label>
+    <input type="password" name="confirm_password" id="confirm_password" required>
+
             <button type="submit" class="auth-button">Sign Up</button>
         </form>
 
@@ -74,4 +77,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 
+<script>
+document.querySelector("form").addEventListener("submit", function (e) {
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirm_password").value;
 
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        e.preventDefault(); // Stop form submission
+    }
+});
+</script>

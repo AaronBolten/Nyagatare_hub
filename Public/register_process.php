@@ -2,47 +2,31 @@
 include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $phone_number = $_POST['phone_number'];
-    $email = $_POST['email'];
+    require_once __DIR__ . '/../vendor/autoload.php'; // Ensure autoload works
+    require_once __DIR__ . '/../db.php'; // Connect to your database
+
+    $email = trim($_POST['email']);
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Check if passwords match
+    // 🔹 Check if passwords match
     if ($password !== $confirm_password) {
-        echo "Passwords do not match.";
+        echo "Error: Passwords do not match!";
         exit();
     }
 
-    // Hash password
-    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+    // 🔹 Hash the password before storing it
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Check if email already exists
-    $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
-    
-    if ($stmt->num_rows > 0) {
-        echo "Email already registered.";
-        exit();
-    }
-    $stmt->close();
+    // 🔹 Insert into database (adjust based on your table structure)
+    $query = "INSERT INTO users (email, password) VALUES (?, ?)";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param("ss", $email, $hashed_password);
 
-    // Insert user into database
-    $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $first_name, $last_name, $phone_number, $email, $hashed_password);
-    
     if ($stmt->execute()) {
-        header("Location: login.php"); // Redirect to login after success
+        echo "Registration successful!";
+        header("Location: login.php");
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: Registration failed!";
     }
-    
-    $stmt->close();
 }
-$conn->close();
-?>
-
-
